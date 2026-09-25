@@ -18,7 +18,7 @@ Developers use a handful of odd words for simple ideas. Each one is explained ag
 - **Commit:** a saved checkpoint of your changes with a short note. "Save, with a label."
 - **Push:** uploading your commits to GitHub.
 - **Pull, or sync:** bringing the latest version from GitHub down to your computer.
-- **Branch:** a separate line of work so you can try something without disturbing the main version, called `main`.
+- **Branch:** a draft copy of the project inside the same repo, so you can try something without disturbing the main version, called `main`. A branch is per change, not per person. Each gets its own pull request and is finished once merged.
 - **Pull request:** asking the project owner to take your changes into the original.
 - **Deploy:** putting the site on the internet with a public address. Vercel does this automatically.
 - **Terminal:** a window where you type commands. Needed twice in this guide; the exact text is given.

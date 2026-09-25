@@ -42,6 +42,18 @@ Then open the URL it prints, usually http://localhost:3000.
 
 The project is connected to Vercel. Every push to `main` deploys to production and every pull request gets its own preview URL. Nothing to configure.
 
+## Reviewing and merging tester changes
+
+Testers send changes as pull requests, either from a fork or, if they have push access, from a branch in this repo. `main` is protected, so nothing reaches the live site until a pull request is merged.
+
+1. Open the **Pull requests** tab. Each one has a **Files changed** tab showing every changed line.
+2. Once Vercel is connected to GitHub, the pull request carries a preview link. Open it to see the change running before deciding.
+3. To ask for a tweak, leave a comment. The tester pushes more commits to the same branch and the pull request updates on its own.
+4. To take it: **Merge pull request**, then **Confirm merge**. Vercel republishes production from `main`. Click **Delete branch** afterwards; the work is in `main` now.
+5. To decline: **Close pull request** with a short note saying why. `main` is untouched.
+
+A branch is per change, not per person. Expect several small pull requests from one tester rather than one big one.
+
 ## Releasing a new version
 
 1. Update the version in `index.html`, `playground.html` and `instructions.html` in two places each: the `data-version` attribute on `<html>` and the footer `.version__number` text.

@@ -72,7 +72,7 @@
             <dt>Commit</dt><dd>A saved checkpoint of your changes, with a short note saying what you did. Think of it as "save, with a label".</dd>
             <dt>Push</dt><dd>Uploading your commits from your computer to GitHub.</dd>
             <dt>Pull, or sync</dt><dd>The opposite of push: bringing the latest version from GitHub down to your computer.</dd>
-            <dt>Branch</dt><dd>A separate line of work inside a project, so you can try something without disturbing the main version. The main version is called <code>main</code>.</dd>
+            <dt>Branch</dt><dd>A draft copy of the project inside the same repo, so you can try something without disturbing the main version. The main version is called <code>main</code> and it is what the live site is built from. A branch is per change, not per person: you might make one called <code>fix-header</code> today and another next week. Each one gets its own pull request, and when it is merged the branch has done its job.</dd>
             <dt>Pull request</dt><dd>A polite request to the project owner: "please take my changes into the original". The owner reviews them and merges them in.</dd>
             <dt>Deploy</dt><dd>Putting the site on the internet so it has a public web address. Vercel does this for you automatically.</dd>
             <dt>Terminal</dt><dd>A window where you type commands instead of clicking. You only need it twice in this guide, and the exact text to type is given each time.</dd>
@@ -211,7 +211,7 @@ git config --global user.email "you@example.com"</code></pre>
             <li>Click <strong>Contribute</strong>, just above the file list, then <strong>Open pull request</strong>.</li>
             <li>Give it a title, fill in the short template, and click <strong>Create pull request</strong>.</li>
           </ol>
-          <p>The change gets reviewed and merged. Once merged, use <strong>Sync fork</strong> from step 10 to bring it back into your copy. A pull request also gets its own preview link, so the change can be seen live before merging.</p>
+          <p>What happens next: Glen gets an email, opens the pull request, and sees exactly which lines you changed. He may leave a comment asking for a tweak; if so, just commit and push again to the same branch and the pull request updates on its own. When he clicks <strong>Merge</strong>, your change becomes part of <code>main</code> and the live site republishes. Once merged, use <strong>Sync fork</strong> from step 10 to bring it back into your copy.</p>
           <p>If you have push access instead of a fork: create a new <strong>branch</strong> (a separate line of work so your change does not disturb the main version) in VS Code (click the branch name in the bottom-left corner), commit, click <strong>Publish Branch</strong>, then use the <strong>Compare &amp; pull request</strong> button GitHub shows you. The main branch is protected, so all changes go in through pull requests.</p>
         </section>
 

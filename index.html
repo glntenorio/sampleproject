@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-version="0.1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Project</title>
+  <meta name="description" content="A plain HTML, CSS and JavaScript sample page for tester review.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232563eb'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="Sample Project home">Sample Project</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow">Tester preview</p>
+        <h1>A simple page you can edit, deploy and send back.</h1>
+        <p class="lead">This sample is plain HTML, CSS and JavaScript. No framework, no build step. Fork it, change it, and open a pull request when you are done.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#features">See the features</a>
+          <a class="button button--ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <h2 id="features-heading">What is in the box</h2>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">01</div>
+            <h3>Plain files</h3>
+            <p>One HTML file, one stylesheet and one script. Open it in a browser and it just works.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">02</div>
+            <h3>Mobile first</h3>
+            <p>Styles are written for small screens first and scale up with a couple of breakpoints.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">03</div>
+            <h3>Works without JavaScript</h3>
+            <p>The menu, the form and every link still work with scripts turned off. JavaScript only adds polish.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact__inner">
+        <div class="contact__intro">
+          <h2 id="contact-heading">Send a note</h2>
+          <p>This form is front-end only. It does not send anything anywhere. It is here so testers can try the validation.</p>
+        </div>
+        <form class="form" action="#contact" method="get" novalidate>
+          <div class="form__field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="form__error" id="name-error" aria-live="polite"></p>
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="form__error" id="email-error" aria-live="polite"></p>
+          </div>
+          <div class="form__field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <p class="form__error" id="message-error" aria-live="polite"></p>
+          </div>
+          <button class="button button--primary" type="submit">Send message</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Sample Project. Built for tester review.</p>
+      <p class="version">Version <span class="version__number">0.1.0</span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ edit in VS Code  ->  commit  ->  push to GitHub  ->  Vercel publishes your site
 Links you will need:
 
 - The project on GitHub: https://github.com/glntenorio/sampleproject
-- The playground page to experiment on: https://sampleproject-tau.vercel.app/playground
+- The playground page to experiment on: https://fortify-sample.vercel.app/playground
 - The tester guide (forking, syncing, pull requests): [TESTERS.md](TESTERS.md)
 
 ---

@@ -5,10 +5,10 @@ Welcome, and thanks for helping test. This guide walks you through getting your 
 Links you will need:
 
 - The project on GitHub: https://github.com/glntenorio/sampleproject
-- The live site: https://sampleproject-tau.vercel.app
+- The live site: https://fortify-sample.vercel.app
 - Report a bug: https://github.com/glntenorio/sampleproject/issues/new/choose
-- Playground page to experiment on: https://sampleproject-tau.vercel.app/playground
-- This guide as a web page: https://sampleproject-tau.vercel.app/instructions
+- Playground page to experiment on: https://fortify-sample.vercel.app/playground
+- This guide as a web page: https://fortify-sample.vercel.app/instructions
 - Full computer setup guide (VS Code, Git, Vercel): [SETUP.md](SETUP.md)
 
 ---

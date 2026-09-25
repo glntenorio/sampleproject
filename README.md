@@ -2,11 +2,11 @@
 
 A small, plain HTML/CSS/JavaScript page used for tester review. There is no framework, no npm dependencies and no build step. Edit the files, refresh the browser, and you are done.
 
-**Live site:** https://sampleproject-tau.vercel.app
+**Live site:** https://fortify-sample.vercel.app
 
-**Playground:** https://sampleproject-tau.vercel.app/playground
+**Playground:** https://fortify-sample.vercel.app/playground
 
-**Instructions for testers:** https://sampleproject-tau.vercel.app/instructions
+**Instructions for testers:** https://fortify-sample.vercel.app/instructions
 
 **Testers:** read [SETUP.md](SETUP.md) to get set up on your computer, then [TESTERS.md](TESTERS.md) for forking, syncing and pull requests.
 

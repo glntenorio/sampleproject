@@ -108,6 +108,8 @@ Thanks for helping test the sample project. Here is everything you need:
 
   Project on GitHub: https://github.com/$REPO
   Live site:         $LIVE_URL
+  Instructions:      $LIVE_URL/instructions
+  Playground:        $LIVE_URL/playground
   Tester guide:      https://github.com/$REPO/blob/main/TESTERS.md
 
 The guide walks you through making your own copy, publishing it on Vercel

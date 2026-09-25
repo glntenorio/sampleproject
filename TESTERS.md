@@ -8,6 +8,7 @@ Links you will need:
 - The live site: https://sampleproject-tau.vercel.app
 - Report a bug: https://github.com/glntenorio/sampleproject/issues/new/choose
 - Playground page to experiment on: https://sampleproject-tau.vercel.app/playground
+- This guide as a web page: https://sampleproject-tau.vercel.app/instructions
 - Full computer setup guide (VS Code, Git, Vercel): [SETUP.md](SETUP.md)
 
 ---

@@ -6,6 +6,8 @@ A small, plain HTML/CSS/JavaScript page used for tester review. There is no fram
 
 **Playground:** https://sampleproject-tau.vercel.app/playground
 
+**Instructions for testers:** https://sampleproject-tau.vercel.app/instructions
+
 **Testers:** read [SETUP.md](SETUP.md) to get set up on your computer, then [TESTERS.md](TESTERS.md) for forking, syncing and pull requests.
 
 ## What is inside
@@ -13,6 +15,7 @@ A small, plain HTML/CSS/JavaScript page used for tester review. There is no fram
 ```
 index.html            The page. The version number lives in the <html data-version> attribute.
 playground.html       A sandbox page for testers to experiment on.
+instructions.html     The tester walkthrough as a web page (same content as SETUP.md and TESTERS.md).
 assets/css/styles.css Mobile-first styles with CSS custom properties.
 assets/js/main.js     Optional enhancements: mobile nav toggle, form validation messages.
 vercel.json           Static hosting config (clean URLs, no build).
@@ -41,7 +44,7 @@ The project is connected to Vercel. Every push to `main` deploys to production a
 
 ## Releasing a new version
 
-1. Update the version in `index.html` and `playground.html` in two places each: the `data-version` attribute on `<html>` and the footer `.version__number` text.
+1. Update the version in `index.html`, `playground.html` and `instructions.html` in two places each: the `data-version` attribute on `<html>` and the footer `.version__number` text.
 2. Add an entry to `CHANGELOG.md`.
 3. Commit with a conventional message, for example `feat: add pricing section (v0.2.0)`, and push to `main`.
 

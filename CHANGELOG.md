@@ -2,6 +2,14 @@
 
 All notable changes to this project are listed here. The version number also appears in the footer of the live site.
 
+## [0.3.0] - 2026-09-25
+
+### Added
+- Instructions page at `/instructions`: the full tester walkthrough on the site itself, with a table of contents, undo table and glossary.
+
+### Changed
+- Navigation links to Instructions on every page. Playground links to the on-site instructions. Version bumped to 0.3.0.
+
 ## [0.2.0] - 2026-09-25
 
 ### Added

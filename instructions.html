@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-version="0.3.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instructions · Sample Project</title>
+  <meta name="description" content="How to set up your computer, get your own copy of the site, edit it, publish it and send changes back.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232563eb'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/" aria-label="Sample Project home">Sample Project</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/playground">Playground</a></li>
+          <li><a href="/instructions" aria-current="page">Instructions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Instructions</p>
+        <h1>From zero to your own live copy.</h1>
+        <p class="lead">Everything you need to test this project: set up your computer, get your own copy, edit it, publish it, keep it up to date, and send changes back. No coding experience needed. Budget about 30 minutes the first time.</p>
+        <p class="lead">You will end up with this loop:</p>
+        <p class="loop" aria-label="Workflow"><span>Edit in VS Code</span><span>Commit</span><span>Push to GitHub</span><span>Vercel publishes</span></p>
+      </div>
+    </section>
+
+    <div class="container docs">
+      <nav class="docs__toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#accounts">Create your accounts</a></li>
+          <li><a href="#install">Install Git and VS Code</a></li>
+          <li><a href="#identity">Tell Git who you are</a></li>
+          <li><a href="#fork">Make your own copy</a></li>
+          <li><a href="#clone">Get it onto your computer</a></li>
+          <li><a href="#preview">See the site locally</a></li>
+          <li><a href="#edit">Make a change</a></li>
+          <li><a href="#push">Save it to GitHub</a></li>
+          <li><a href="#vercel">Publish on Vercel</a></li>
+          <li><a href="#sync">Get the latest updates</a></li>
+          <li><a href="#pr">Send changes back</a></li>
+          <li><a href="#bugs">Report a bug</a></li>
+          <li><a href="#undo">Undo mistakes</a></li>
+          <li><a href="#glossary">Glossary</a></li>
+        </ol>
+      </nav>
+
+      <div class="docs__body">
+        <section id="accounts" class="docs__section">
+          <h2><span class="docs__num">1</span>Create your accounts</h2>
+          <p>You need two free accounts.</p>
+          <ol>
+            <li><strong>GitHub</strong> stores the code. Sign up at <a href="https://github.com/signup">github.com/signup</a>.</li>
+            <li><strong>Vercel</strong> publishes the site. Go to <a href="https://vercel.com/signup">vercel.com/signup</a> and choose <strong>Continue with GitHub</strong>. Pick the free Hobby plan.</li>
+          </ol>
+          <p class="callout">Signing up to Vercel with GitHub matters. It lets Vercel see your copy of the project without any extra setup later.</p>
+        </section>
+
+        <section id="install" class="docs__section">
+          <h2><span class="docs__num">2</span>Install Git and VS Code</h2>
+          <h3>Git</h3>
+          <p>Git tracks your changes and talks to GitHub.</p>
+          <ul>
+            <li><strong>Mac:</strong> open the <strong>Terminal</strong> app (search for it with Spotlight), type <code>git --version</code> and press Enter. If Git is not installed, macOS offers to install it. Click <strong>Install</strong>.</li>
+            <li><strong>Windows:</strong> download and run the installer from <a href="https://git-scm.com/download/win">git-scm.com/download/win</a>. Accept all the defaults.</li>
+          </ul>
+          <p>Check it worked. Open a new terminal (Mac: Terminal, Windows: Git Bash from the Start menu) and run:</p>
+          <pre><code>git --version</code></pre>
+          <p>You should see a version number.</p>
+          <h3>VS Code</h3>
+          <p>VS Code is the editor. Download it from <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and install it.</p>
+          <p>Then add one extension. Click the <strong>Extensions</strong> icon in the left sidebar (four squares), search for <strong>Live Server</strong> by Ritwick Dey, and click <strong>Install</strong>. This previews the site with automatic refresh.</p>
+        </section>
+
+        <section id="identity" class="docs__section">
+          <h2><span class="docs__num">3</span>Tell Git who you are</h2>
+          <p>Git labels every change with a name and email. Set them once, using the same email you used for GitHub:</p>
+          <pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</code></pre>
+        </section>
+
+        <section id="fork" class="docs__section">
+          <h2><span class="docs__num">4</span>Make your own copy (a fork)</h2>
+          <p>A fork is your personal copy of the project on GitHub. You can change anything in it without affecting the original.</p>
+          <ol>
+            <li>Open <a href="https://github.com/glntenorio/sampleproject/fork">github.com/glntenorio/sampleproject/fork</a>.</li>
+            <li>Leave everything as it is and click <strong>Create fork</strong>.</li>
+          </ol>
+          <p>You now have your own copy at <code>github.com/YOUR-USERNAME/sampleproject</code>.</p>
+          <p class="callout">If you were given push access to the main repo, you can skip the fork and use <code>github.com/glntenorio/sampleproject</code> in the next step instead. Accept the invitation email from GitHub first.</p>
+        </section>
+
+        <section id="clone" class="docs__section">
+          <h2><span class="docs__num">5</span>Get it onto your computer (clone)</h2>
+          <ol>
+            <li>Open VS Code.</li>
+            <li>Open the Command Palette: <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows.</li>
+            <li>Type <code>Git: Clone</code> and press Enter.</li>
+            <li>Paste the URL of your fork, for example <code>https://github.com/YOUR-USERNAME/sampleproject.git</code>, and press Enter.</li>
+            <li>Choose a folder to put it in, such as Documents, and click <strong>Select as Repository Destination</strong>.</li>
+            <li>When asked, click <strong>Open</strong>.</li>
+          </ol>
+          <p>The first time, VS Code asks you to sign in to GitHub. Click <strong>Allow</strong> and follow the browser prompts. This only happens once.</p>
+          <p>You should now see the project files in the left sidebar: <code>index.html</code>, <code>playground.html</code>, an <code>assets</code> folder and so on.</p>
+        </section>
+
+        <section id="preview" class="docs__section">
+          <h2><span class="docs__num">6</span>See the site locally</h2>
+          <p><strong>Option A, recommended:</strong> in VS Code, right-click <code>playground.html</code> in the sidebar and choose <strong>Open with Live Server</strong>. Your browser opens the page. Every time you save, it refreshes on its own.</p>
+          <p><strong>Option B:</strong> find the folder in Finder or Explorer and double-click <code>playground.html</code>. Refresh the browser yourself after each save.</p>
+        </section>
+
+        <section id="edit" class="docs__section">
+          <h2><span class="docs__num">7</span>Make a change</h2>
+          <ol>
+            <li>In VS Code, click <code>playground.html</code> to open it.</li>
+            <li>Find the line near the top that starts with <code>&lt;h1&gt;</code> and change the text.</li>
+            <li>Press <kbd>Cmd</kbd>+<kbd>S</kbd> (Mac) or <kbd>Ctrl</kbd>+<kbd>S</kbd> (Windows) to save.</li>
+            <li>Look at the browser. The heading has changed.</li>
+          </ol>
+          <p>The <a href="/playground">Playground</a> page lists five things to try, from changing a colour to editing JavaScript.</p>
+        </section>
+
+        <section id="push" class="docs__section">
+          <h2><span class="docs__num">8</span>Save it to GitHub (commit and push)</h2>
+          <p>Saving a file only changes it on your computer. To store it on GitHub and publish it, you commit and push.</p>
+          <ol>
+            <li>Click the <strong>Source Control</strong> icon in the left sidebar. It looks like a branch and shows a number when you have changes.</li>
+            <li>Hover over <strong>Changes</strong> and click the <strong>+</strong> to stage all your files.</li>
+            <li>In the <strong>Message</strong> box, type a short note like <code>Change playground heading</code>.</li>
+            <li>Click <strong>Commit</strong>.</li>
+            <li>Click <strong>Sync Changes</strong> (or <strong>Publish Branch</strong> the first time).</li>
+          </ol>
+          <p>Refresh your fork on GitHub and you will see the change and your message.</p>
+        </section>
+
+        <section id="vercel" class="docs__section">
+          <h2><span class="docs__num">9</span>Publish on Vercel</h2>
+          <p>You only do this once. After that, every push republishes automatically.</p>
+          <ol>
+            <li>Go to <a href="https://vercel.com/new">vercel.com/new</a>.</li>
+            <li>Find <code>sampleproject</code> in the list and click <strong>Import</strong>. If you do not see it, click <strong>Adjust GitHub App Permissions</strong> and allow access to the repository.</li>
+            <li>Leave every setting alone and click <strong>Deploy</strong>.</li>
+            <li>After about a minute you get a link to your live site. Open it and add <code>/playground</code> to the end.</li>
+          </ol>
+          <p>From now on, every push republishes your site within a minute. Check the <strong>Version</strong> label in the footer to confirm you are seeing the latest build.</p>
+        </section>
+
+        <section id="sync" class="docs__section">
+          <h2><span class="docs__num">10</span>Get the latest updates</h2>
+          <p>When a new version is released, your fork does not update by itself.</p>
+          <ol>
+            <li>On GitHub, open your fork. Above the file list you will see something like <em>This branch is 3 commits behind</em>. Click <strong>Sync fork</strong>, then <strong>Update branch</strong>.</li>
+            <li>In VS Code, open Source Control and click <strong>Sync Changes</strong> to bring it down to your computer.</li>
+          </ol>
+          <p>Vercel republishes your site automatically. The footer version should now match the latest entry in the changelog.</p>
+          <p class="callout">If GitHub reports a conflict, we both changed the same lines. Only click <strong>Discard commits</strong> if you are fine losing your changes to that file. Otherwise, send a note and we will sort it out together.</p>
+        </section>
+
+        <section id="pr" class="docs__section">
+          <h2><span class="docs__num">11</span>Send changes back (pull request)</h2>
+          <ol>
+            <li>Open your fork on GitHub.</li>
+            <li>Click <strong>Contribute</strong>, just above the file list, then <strong>Open pull request</strong>.</li>
+            <li>Give it a title, fill in the short template, and click <strong>Create pull request</strong>.</li>
+          </ol>
+          <p>The change gets reviewed and merged. Once merged, use <strong>Sync fork</strong> from step 10 to bring it back into your copy. A pull request also gets its own preview link, so the change can be seen live before merging.</p>
+          <p>If you have push access instead of a fork: create a new branch in VS Code (click the branch name in the bottom-left corner), commit, click <strong>Publish Branch</strong>, then use the <strong>Compare &amp; pull request</strong> button GitHub shows you. The main branch is protected, so all changes go in through pull requests.</p>
+        </section>
+
+        <section id="bugs" class="docs__section">
+          <h2><span class="docs__num">12</span>Report a bug or give feedback</h2>
+          <p>Please report on the <strong>main</strong> repository, not on your fork, so everything lands in one place.</p>
+          <ol>
+            <li>Go to <a href="https://github.com/glntenorio/sampleproject/issues/new/choose">the new issue page</a>.</li>
+            <li>Choose <strong>Bug report</strong> for something broken, or <strong>Feedback</strong> for ideas.</li>
+            <li>Fill in the template. Screenshots help a lot. You can drag an image straight into the text box.</li>
+            <li>Click <strong>Submit new issue</strong>.</li>
+          </ol>
+        </section>
+
+        <section id="undo" class="docs__section">
+          <h2><span class="docs__num">13</span>Undo mistakes</h2>
+          <p>You cannot really break anything. Some common rescues:</p>
+          <table class="docs__table">
+            <thead><tr><th scope="col">Problem</th><th scope="col">Fix</th></tr></thead>
+            <tbody>
+              <tr><td>I changed a file and want it back the way it was</td><td>In Source Control, hover the file and click the <strong>Discard Changes</strong> arrow.</td></tr>
+              <tr><td>I want to throw away everything since my last commit</td><td>Command Palette, type <code>Git: Discard All Changes</code>.</td></tr>
+              <tr><td>I committed something bad and have not pushed</td><td>Command Palette, type <code>Git: Undo Last Commit</code>.</td></tr>
+              <tr><td>My copy is a mess and I want a fresh start</td><td>Delete the folder from your computer and repeat step 5. Your GitHub fork is untouched.</td></tr>
+              <tr><td>Even my fork is a mess</td><td>Delete the fork on GitHub (Settings, bottom of the page, <strong>Delete this repository</strong>) and fork again from step 4.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="glossary" class="docs__section">
+          <h2><span class="docs__num">14</span>Glossary</h2>
+          <dl class="docs__glossary">
+            <dt>Repository (repo)</dt><dd>A project folder that Git tracks. Yours lives on your computer and on GitHub.</dd>
+            <dt>Fork</dt><dd>Your own copy of someone else's repo on GitHub.</dd>
+            <dt>Clone</dt><dd>Downloading a repo from GitHub to your computer.</dd>
+            <dt>Commit</dt><dd>A saved snapshot of your changes with a message.</dd>
+            <dt>Push</dt><dd>Sending your commits up to GitHub.</dd>
+            <dt>Pull or Sync</dt><dd>Bringing changes from GitHub down to your computer.</dd>
+            <dt>Pull request</dt><dd>Asking the original project to take in your changes.</dd>
+            <dt>Deploy</dt><dd>Publishing the site so it has a public web address. Vercel does this for you.</dd>
+          </dl>
+        </section>
+
+        <p class="docs__footnote">These instructions are also in the repo as <a href="https://github.com/glntenorio/sampleproject/blob/main/SETUP.md">SETUP.md</a> and <a href="https://github.com/glntenorio/sampleproject/blob/main/TESTERS.md">TESTERS.md</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Sample Project. Built for tester review.</p>
+      <p class="version">Version <span class="version__number">0.3.0</span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

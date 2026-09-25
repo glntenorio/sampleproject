@@ -5,7 +5,7 @@ Welcome, and thanks for helping test. This guide walks you through getting your 
 Links you will need:
 
 - The project on GitHub: https://github.com/glntenorio/sampleproject
-- The live site: _see README for the URL_
+- The live site: https://sampleproject-tau.vercel.app
 - Report a bug: https://github.com/glntenorio/sampleproject/issues/new/choose
 
 ---

@@ -2,7 +2,7 @@
 
 A small, plain HTML/CSS/JavaScript page used for tester review. There is no framework, no npm dependencies and no build step. Edit the files, refresh the browser, and you are done.
 
-**Live site:** _pending first deploy_
+**Live site:** https://sampleproject-tau.vercel.app
 
 **Testers:** read [TESTERS.md](TESTERS.md) for the step-by-step guide.
 

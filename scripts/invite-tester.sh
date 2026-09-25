@@ -8,7 +8,7 @@
 set -euo pipefail
 
 REPO="glntenorio/sampleproject"
-LIVE_URL="${LIVE_URL:-https://sampleproject.vercel.app}"
+LIVE_URL="${LIVE_URL:-https://sampleproject-tau.vercel.app}"
 
 usage() {
   cat <<USAGE

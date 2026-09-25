@@ -47,6 +47,29 @@
     }
   }
 
+  /* Playground counter ---------------------------------------------------- */
+
+  var counterValue = document.querySelector('[data-counter="value"]');
+  if (counterValue) {
+    var STEP = 1; // Testers: try changing this to 10
+    var count = 0;
+    var fallback = document.querySelector('[data-counter="fallback"]');
+    if (fallback) fallback.hidden = true;
+
+    function render() {
+      counterValue.textContent = String(count);
+    }
+
+    document.addEventListener('click', function (event) {
+      var action = event.target.getAttribute && event.target.getAttribute('data-counter');
+      if (action === 'up') count += STEP;
+      else if (action === 'down') count -= STEP;
+      else if (action === 'reset') count = 0;
+      else return;
+      render();
+    });
+  }
+
   /* Contact form validation ---------------------------------------------- */
 
   var form = document.querySelector('.form');

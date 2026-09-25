@@ -7,6 +7,8 @@ Links you will need:
 - The project on GitHub: https://github.com/glntenorio/sampleproject
 - The live site: https://sampleproject-tau.vercel.app
 - Report a bug: https://github.com/glntenorio/sampleproject/issues/new/choose
+- Playground page to experiment on: https://sampleproject-tau.vercel.app/playground
+- Full computer setup guide (VS Code, Git, Vercel): [SETUP.md](SETUP.md)
 
 ---
 
@@ -44,6 +46,8 @@ There are two ways. Pick whichever feels comfortable.
 4. Click **Commit changes**, write a short note about what you changed, and click **Commit changes** again.
 
 ### Option B: edit on your computer with VS Code
+
+For a full walkthrough with screenshots-level detail, read [SETUP.md](SETUP.md). The short version:
 
 1. Install [Git](https://git-scm.com/downloads) and [VS Code](https://code.visualstudio.com/).
 2. On your fork's GitHub page click the green **Code** button and copy the URL.
@@ -111,5 +115,5 @@ Please report problems on **my** repository, not on your fork, so everything lan
 | Change something | Edit a file in your fork on GitHub and commit |
 | Get my latest version | Fork page > **Sync fork** > **Update branch** |
 | Check which version I have | Look at the **Version** label in the site footer |
-| Send a change to me | Fork page > **Contribute** > **Open pull request** |
+| Send a change to me | Fork page > **Contribute** > **Open pull request**, or push a branch and open a pull request if you have push access |
 | Report a bug | Open an Issue on my repo using the Bug report template |

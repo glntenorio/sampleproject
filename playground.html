@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-version="0.2.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playground · Sample Project</title>
+  <meta name="description" content="A safe page for testers to experiment with HTML, CSS and JavaScript.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232563eb'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/" aria-label="Sample Project home">Sample Project</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/playground" aria-current="page">Playground</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Playground</p>
+        <h1>Break things here. That is the point.</h1>
+        <p class="lead">This page exists for you to experiment on. Change the words, the colours, the layout, anything. Nothing on this page is precious. If you get stuck, the <a href="https://github.com/glntenorio/sampleproject/blob/main/SETUP.md">setup guide</a> explains how to get it running on your computer and how to undo mistakes.</p>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="tasks-heading">
+      <div class="container">
+        <h2 id="tasks-heading">Five things to try</h2>
+        <p class="lead">Each one touches a different file. Do them in order if you are new to this, or skip around.</p>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">1</div>
+            <h3>Change some text</h3>
+            <p>Open <code>playground.html</code> and change the heading at the top of this page. Save, refresh, and see it update.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">2</div>
+            <h3>Change a colour</h3>
+            <p>Open <code>assets/css/styles.css</code>. Near the top, change <code>--color-primary</code> to another colour, like <code>#16a34a</code>. Every button and link follows it.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">3</div>
+            <h3>Add a card</h3>
+            <p>Copy one of these <code>&lt;article class="card"&gt;</code> blocks and paste it below the last one. Give it your own title and text.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">4</div>
+            <h3>Make the counter count</h3>
+            <p>The counter below only works with JavaScript. Open <code>assets/js/main.js</code>, find the Playground section, and change the step from 1 to 10.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">5</div>
+            <h3>Ship it</h3>
+            <p>Commit, push, and open your Vercel URL. Then open a pull request so I can see what you did. The version label in the footer tells you which build you are looking at.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="sandbox-heading">
+      <div class="container">
+        <h2 id="sandbox-heading">Sandbox</h2>
+        <p>Some ready-made pieces to poke at. They all work without JavaScript except the counter.</p>
+
+        <div class="sandbox">
+          <div class="sandbox__item">
+            <h3>Buttons</h3>
+            <p class="sandbox__row">
+              <a class="button button--primary" href="#sandbox-heading">Primary</a>
+              <a class="button button--ghost" href="#sandbox-heading">Ghost</a>
+              <button class="button button--primary" type="button" disabled>Disabled</button>
+            </p>
+          </div>
+
+          <div class="sandbox__item">
+            <h3>Counter</h3>
+            <p class="sandbox__row">
+              <button class="button button--ghost" type="button" data-counter="down" aria-label="Decrease">&minus;</button>
+              <output class="counter" data-counter="value" aria-live="polite">0</output>
+              <button class="button button--ghost" type="button" data-counter="up" aria-label="Increase">+</button>
+              <button class="button button--ghost" type="button" data-counter="reset">Reset</button>
+            </p>
+            <p class="sandbox__note" data-counter="fallback">JavaScript is off, so the counter does nothing. That is expected.</p>
+          </div>
+
+          <div class="sandbox__item">
+            <h3>Details and summary</h3>
+            <details>
+              <summary>Click to expand</summary>
+              <p>This opens and closes with no JavaScript at all. Try adding another one.</p>
+            </details>
+          </div>
+
+          <div class="sandbox__item">
+            <h3>An editable box</h3>
+            <p class="sandbox__note">Type in here to see how text wraps. It resets on refresh.</p>
+            <div class="editable" contenteditable="true" spellcheck="false" aria-label="Editable text area">Click me and start typing.</div>
+          </div>
+
+          <div class="sandbox__item">
+            <h3>Your section</h3>
+            <p class="sandbox__note">Replace this with anything you like. A table, an image, a list of your favourite things.</p>
+            <div class="placeholder" aria-hidden="true">Your content here</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Sample Project. Built for tester review.</p>
+      <p class="version">Version <span class="version__number">0.2.0</span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -440,3 +440,97 @@ textarea:focus-visible {
     transition: none;
   }
 }
+
+/* Playground ------------------------------------------------------------- */
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  padding: 0 var(--space-1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+
+.card code {
+  background: var(--color-bg);
+}
+
+.sandbox {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.sandbox__item {
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.sandbox__item h3 {
+  margin-bottom: var(--space-3);
+}
+
+.sandbox__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.sandbox__note {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.counter {
+  min-width: 3rem;
+  text-align: center;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+details {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details p {
+  margin: var(--space-3) 0 0;
+}
+
+.editable {
+  min-height: 5rem;
+  padding: var(--space-3);
+  border: 1px dashed var(--color-primary);
+  border-radius: var(--radius);
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 8rem;
+  color: var(--color-muted);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+@media (min-width: 40em) {
+  .sandbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

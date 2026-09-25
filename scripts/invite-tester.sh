@@ -3,7 +3,7 @@
 # invite-tester.sh: check a GitHub user exists, grant access if the repo is
 # private, and print a ready-to-send invite message.
 #
-# Usage: ./scripts/invite-tester.sh <github-username>
+# Usage: ./scripts/invite-tester.sh [--write] <github-username>
 
 set -euo pipefail
 
@@ -12,12 +12,18 @@ LIVE_URL="${LIVE_URL:-https://sampleproject-tau.vercel.app}"
 
 usage() {
   cat <<USAGE
-Usage: $(basename "$0") <github-username>
+Usage: $(basename "$0") [--write] <github-username>
 
-Checks that the GitHub user exists, adds them as a read collaborator if the
-repo is private (skipped if public), and prints an invite message to send.
+Checks that the GitHub user exists, grants access, and prints an invite
+message to send.
+
+By default a tester gets read access if the repo is private (nothing is
+needed if it is public) and works from their own fork. With --write they are
+added as a collaborator with push access to this repo instead, so they can
+push branches and open pull requests here directly.
 
 Options:
+  -w, --write   Add the user as a write collaborator (push access)
   -h, --help    Show this help and exit
 
 Environment:
@@ -35,15 +41,28 @@ if [[ $# -eq 0 ]]; then
   exit 1
 fi
 
-case "$1" in
-  -h|--help)
-    usage
-    exit 0
-    ;;
-esac
+WRITE=0
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    -w|--write)
+      WRITE=1
+      shift
+      ;;
+    -*)
+      fail "unknown option '$1'. Run with --help."
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
 if [[ $# -ne 1 ]]; then
-  fail "expected exactly one argument (a GitHub username), got $#. Run with --help."
+  fail "expected exactly one GitHub username, got $#. Run with --help."
 fi
 
 USERNAME="$1"
@@ -65,7 +84,12 @@ VISIBILITY="$(gh repo view "$REPO" --json visibility --jq '.visibility' 2>/dev/n
   || fail "could not read repo '$REPO'. Does it exist and do you have access?"
 VISIBILITY="$(echo "$VISIBILITY" | tr '[:upper:]' '[:lower:]')"
 
-if [[ "$VISIBILITY" == "private" ]]; then
+if [[ "$WRITE" -eq 1 ]]; then
+  echo "Adding '$USERNAME' as a write collaborator (push access)..."
+  gh api --method PUT "repos/$REPO/collaborators/$USERNAME" -f permission=push >/dev/null \
+    || fail "could not add '$USERNAME' as a collaborator."
+  echo "Invitation sent. They must accept it on GitHub (they will get an email) before they can push."
+elif [[ "$VISIBILITY" == "private" ]]; then
   echo "Repo is private. Adding '$USERNAME' as a read collaborator..."
   gh api --method PUT "repos/$REPO/collaborators/$USERNAME" -f permission=pull >/dev/null \
     || fail "could not add '$USERNAME' as a collaborator."
@@ -88,6 +112,23 @@ Thanks for helping test the sample project. Here is everything you need:
 
 The guide walks you through making your own copy, publishing it on Vercel
 (free), editing it, pulling in my updates, and sending changes back.
+MESSAGE
+
+if [[ "$WRITE" -eq 1 ]]; then
+cat <<MESSAGE
+
+You also have push access to the main repo. Accept the GitHub invitation
+from your email first, then you can clone it directly:
+
+  git clone https://github.com/$REPO.git
+
+Make your changes on a new branch and open a pull request. The main branch
+is protected, so changes go in through pull requests rather than straight
+onto main.
+MESSAGE
+fi
+
+cat <<MESSAGE
 
 Reply with any questions.
 

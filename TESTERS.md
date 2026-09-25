@@ -75,6 +75,23 @@ When you have made a change you want me to include in the original project:
 
 A pull request also gets its own preview link, so I can see your change live before merging.
 
+## 6b. If I gave you push access
+
+Some testers are added as collaborators, which means you can work in my repo directly instead of a fork. You will get an email from GitHub with an invitation. Accept it first.
+
+1. Clone my repo (not a fork):
+
+   ```
+   git clone https://github.com/glntenorio/sampleproject.git
+   ```
+
+   Or in VS Code: Command Palette, **Git: Clone**, paste that URL.
+2. Create a branch for your change. In VS Code, click the branch name in the bottom-left corner and choose **Create new branch**. Give it a short name like `fix-header-spacing`.
+3. Edit, commit, and click **Publish Branch** (or **Sync Changes**).
+4. GitHub will show a **Compare & pull request** button on the repo page. Click it, fill in the template, and create the pull request.
+
+The `main` branch is protected, so you cannot push to it directly. Every change goes in through a pull request, which also gives it a preview link.
+
 ## 7. Report a bug or give feedback
 
 Please report problems on **my** repository, not on your fork, so everything lands in one place.

@@ -49,4 +49,4 @@ Testers sync their forks and check the footer to confirm they have the latest ve
 ./scripts/invite-tester.sh <github-username>
 ```
 
-This checks the user exists, adds them as a collaborator if the repo is private, and prints an invite message you can paste into an email or chat.
+This checks the user exists, grants access, and prints an invite message you can paste into an email or chat. Add `--write` to give the tester push access to this repo so they can clone it directly and push branches; otherwise they work from a fork.

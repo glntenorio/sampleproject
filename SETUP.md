@@ -8,6 +8,23 @@ You will end up with this loop:
 edit in VS Code  ->  commit  ->  push to GitHub  ->  Vercel publishes your site
 ```
 
+## Words you will see
+
+Developers use a handful of odd words for simple ideas. Each one is explained again when it first comes up.
+
+- **Repository, or repo:** a project folder. A copy lives on GitHub and, once set up, another lives on your computer.
+- **Fork:** your own copy of someone else's project on GitHub. Change it freely without touching the original.
+- **Clone:** downloading a project from GitHub onto your computer.
+- **Commit:** a saved checkpoint of your changes with a short note. "Save, with a label."
+- **Push:** uploading your commits to GitHub.
+- **Pull, or sync:** bringing the latest version from GitHub down to your computer.
+- **Branch:** a separate line of work so you can try something without disturbing the main version, called `main`.
+- **Pull request:** asking the project owner to take your changes into the original.
+- **Deploy:** putting the site on the internet with a public address. Vercel does this automatically.
+- **Terminal:** a window where you type commands. Needed twice in this guide; the exact text is given.
+- **Command Palette:** a search box in VS Code that runs any action by name. Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows).
+- **Extension:** an add-on that gives VS Code an extra feature.
+
 Links you will need:
 
 - The project on GitHub: https://github.com/glntenorio/sampleproject
@@ -22,7 +39,7 @@ You need three things installed. All are free.
 
 ### Git
 
-Git tracks your changes and talks to GitHub.
+Git is the program that keeps track of your changes and sends them to GitHub. GitHub is the website; Git is the tool on your computer that talks to it. Installing it uses the **terminal**, a window where you type commands. The exact text is given below.
 
 - **Mac:** open the **Terminal** app (search for it with Spotlight), type `git --version` and press Enter. If it is not installed, macOS will offer to install the command line tools. Click **Install** and wait.
 - **Windows:** download and run the installer from https://git-scm.com/download/win. Accept all the defaults.
@@ -37,7 +54,7 @@ You should see a version number.
 
 ### VS Code
 
-VS Code is the editor. Download it from https://code.visualstudio.com/ and install it.
+VS Code is the program you edit the files in, like Word but for code. Download it from https://code.visualstudio.com/ and install it.
 
 Once installed, open it and add one extension. Click the **Extensions** icon in the left sidebar (four squares), search for **Live Server** by Ritwick Dey, and click **Install**. This lets you preview the site with automatic refresh.
 
@@ -67,6 +84,8 @@ Then open https://github.com/glntenorio/sampleproject/fork and click **Create fo
 If Glen gave you push access instead, skip the fork and use `https://github.com/glntenorio/sampleproject` in the next step.
 
 ### 3b. Clone it in VS Code
+
+Your fork lives on GitHub's website. Downloading a copy to your computer is called **cloning**. VS Code does it for you.
 
 1. Open VS Code.
 2. Open the Command Palette: **Cmd+Shift+P** on Mac, **Ctrl+Shift+P** on Windows.
@@ -98,7 +117,7 @@ The **Playground** page lists five things to try, from changing a colour to edit
 
 ## 6. Save your work to GitHub (commit and push)
 
-Saving a file only changes it on your computer. To store it on GitHub and publish it, you commit and push.
+Saving a file only changes it on your computer. Getting it onto GitHub takes two small steps. A **commit** is a checkpoint that bundles your changes with a short note. A **push** uploads those commits to GitHub. VS Code has buttons for both.
 
 1. Click the **Source Control** icon in the left sidebar (it looks like a branch, and shows a number badge when you have changes).
 2. You will see your changed files listed. Hover over **Changes** and click the **+** to stage them all.
@@ -144,14 +163,3 @@ You cannot really break anything. Some common rescues:
 See [TESTERS.md](TESTERS.md), sections 6 and 7. In short: open a pull request from your fork, and open an Issue on Glen's repo for bugs.
 
 ---
-
-## Glossary
-
-- **Repository (repo):** a project folder that Git tracks. Yours lives on your computer and on GitHub.
-- **Fork:** your own copy of someone else's repo on GitHub.
-- **Clone:** downloading a repo from GitHub to your computer.
-- **Commit:** a saved snapshot of your changes with a message.
-- **Push:** sending your commits up to GitHub.
-- **Pull / Sync:** bringing changes from GitHub down to your computer.
-- **Pull request:** asking the original project to take in your changes.
-- **Deploy:** publishing the site so it has a public web address. Vercel does this for you.

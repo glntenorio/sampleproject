@@ -43,7 +43,8 @@
     <div class="container docs">
       <nav class="docs__toc" aria-label="On this page">
         <h2>On this page</h2>
-        <ol>
+        <ol start="0">
+          <li><a href="#words">Words you will see</a></li>
           <li><a href="#accounts">Create your accounts</a></li>
           <li><a href="#install">Install Git and VS Code</a></li>
           <li><a href="#identity">Tell Git who you are</a></li>
@@ -57,11 +58,29 @@
           <li><a href="#pr">Send changes back</a></li>
           <li><a href="#bugs">Report a bug</a></li>
           <li><a href="#undo">Undo mistakes</a></li>
-          <li><a href="#glossary">Glossary</a></li>
         </ol>
       </nav>
 
       <div class="docs__body">
+        <section id="words" class="docs__section">
+          <h2><span class="docs__num">0</span>Words you will see</h2>
+          <p>Developers use a handful of odd words for simple ideas. Here they are in plain language. Each one is explained again when it first comes up, so you do not need to memorise this list.</p>
+          <dl class="docs__glossary">
+            <dt>Repository, or repo</dt><dd>A project folder. The one for this site holds a few web pages and a stylesheet. A copy lives on GitHub and, once you set up, another copy lives on your computer.</dd>
+            <dt>Fork</dt><dd>Your own copy of someone else's project on GitHub. You can change it freely without touching the original.</dd>
+            <dt>Clone</dt><dd>Downloading a project from GitHub onto your computer so you can open the files.</dd>
+            <dt>Commit</dt><dd>A saved checkpoint of your changes, with a short note saying what you did. Think of it as "save, with a label".</dd>
+            <dt>Push</dt><dd>Uploading your commits from your computer to GitHub.</dd>
+            <dt>Pull, or sync</dt><dd>The opposite of push: bringing the latest version from GitHub down to your computer.</dd>
+            <dt>Branch</dt><dd>A separate line of work inside a project, so you can try something without disturbing the main version. The main version is called <code>main</code>.</dd>
+            <dt>Pull request</dt><dd>A polite request to the project owner: "please take my changes into the original". The owner reviews them and merges them in.</dd>
+            <dt>Deploy</dt><dd>Putting the site on the internet so it has a public web address. Vercel does this for you automatically.</dd>
+            <dt>Terminal</dt><dd>A window where you type commands instead of clicking. You only need it twice in this guide, and the exact text to type is given each time.</dd>
+            <dt>Command Palette</dt><dd>A search box inside VS Code that runs any action by name. Open it with <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows.</dd>
+            <dt>Extension</dt><dd>An add-on for VS Code that gives it an extra feature, like a browser add-on.</dd>
+          </dl>
+        </section>
+
         <section id="accounts" class="docs__section">
           <h2><span class="docs__num">1</span>Create your accounts</h2>
           <p>You need two free accounts.</p>
@@ -75,7 +94,8 @@
         <section id="install" class="docs__section">
           <h2><span class="docs__num">2</span>Install Git and VS Code</h2>
           <h3>Git</h3>
-          <p>Git tracks your changes and talks to GitHub.</p>
+          <p>Git is the program that keeps track of your changes and sends them to GitHub. GitHub is the website; Git is the tool on your computer that talks to it.</p>
+          <p>Installing it means using the <strong>terminal</strong>, a window where you type commands. Do not worry, the exact text to type is given below and you only need it here and in step 3.</p>
           <ul>
             <li><strong>Mac:</strong> open the <strong>Terminal</strong> app (search for it with Spotlight), type <code>git --version</code> and press Enter. If Git is not installed, macOS offers to install it. Click <strong>Install</strong>.</li>
             <li><strong>Windows:</strong> download and run the installer from <a href="https://git-scm.com/download/win">git-scm.com/download/win</a>. Accept all the defaults.</li>
@@ -84,8 +104,8 @@
           <pre><code>git --version</code></pre>
           <p>You should see a version number.</p>
           <h3>VS Code</h3>
-          <p>VS Code is the editor. Download it from <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and install it.</p>
-          <p>Then add one extension. Click the <strong>Extensions</strong> icon in the left sidebar (four squares), search for <strong>Live Server</strong> by Ritwick Dey, and click <strong>Install</strong>. This previews the site with automatic refresh.</p>
+          <p>VS Code is the program you will edit the files in, like Word but for code. Download it from <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and install it.</p>
+          <p>Then add one <strong>extension</strong> (an add-on that gives VS Code an extra feature). Click the <strong>Extensions</strong> icon in the left sidebar (four squares), search for <strong>Live Server</strong> by Ritwick Dey, and click <strong>Install</strong>. This previews the site with automatic refresh.</p>
         </section>
 
         <section id="identity" class="docs__section">
@@ -108,9 +128,10 @@ git config --global user.email "you@example.com"</code></pre>
 
         <section id="clone" class="docs__section">
           <h2><span class="docs__num">5</span>Get it onto your computer (clone)</h2>
+          <p>Your fork lives on GitHub's website. To edit the files you need a copy on your own computer. Downloading that copy is called <strong>cloning</strong>. VS Code can do it for you.</p>
           <ol>
             <li>Open VS Code.</li>
-            <li>Open the Command Palette: <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows.</li>
+            <li>Open the <strong>Command Palette</strong>, a search box that runs any VS Code action by name: <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Mac, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on Windows.</li>
             <li>Type <code>Git: Clone</code> and press Enter.</li>
             <li>Paste the URL of your fork, for example <code>https://github.com/YOUR-USERNAME/sampleproject.git</code>, and press Enter.</li>
             <li>Choose a folder to put it in, such as Documents, and click <strong>Select as Repository Destination</strong>.</li>
@@ -139,7 +160,7 @@ git config --global user.email "you@example.com"</code></pre>
 
         <section id="push" class="docs__section">
           <h2><span class="docs__num">8</span>Save it to GitHub (commit and push)</h2>
-          <p>Saving a file only changes it on your computer. To store it on GitHub and publish it, you commit and push.</p>
+          <p>Saving a file only changes it on your computer. Getting it onto GitHub takes two small steps. A <strong>commit</strong> is a checkpoint: it bundles your changes together with a short note about what you did. A <strong>push</strong> uploads those commits to GitHub. VS Code has buttons for both.</p>
           <ol>
             <li>Click the <strong>Source Control</strong> icon in the left sidebar. It looks like a branch and shows a number when you have changes.</li>
             <li>Hover over <strong>Changes</strong> and click the <strong>+</strong> to stage all your files.</li>
@@ -175,13 +196,14 @@ git config --global user.email "you@example.com"</code></pre>
 
         <section id="pr" class="docs__section">
           <h2><span class="docs__num">11</span>Send changes back (pull request)</h2>
+          <p>Your changes so far live only in your fork. A <strong>pull request</strong> is how you ask for them to be taken into the original project. It opens a page on GitHub where the change can be discussed, previewed and then merged in.</p>
           <ol>
             <li>Open your fork on GitHub.</li>
             <li>Click <strong>Contribute</strong>, just above the file list, then <strong>Open pull request</strong>.</li>
             <li>Give it a title, fill in the short template, and click <strong>Create pull request</strong>.</li>
           </ol>
           <p>The change gets reviewed and merged. Once merged, use <strong>Sync fork</strong> from step 10 to bring it back into your copy. A pull request also gets its own preview link, so the change can be seen live before merging.</p>
-          <p>If you have push access instead of a fork: create a new branch in VS Code (click the branch name in the bottom-left corner), commit, click <strong>Publish Branch</strong>, then use the <strong>Compare &amp; pull request</strong> button GitHub shows you. The main branch is protected, so all changes go in through pull requests.</p>
+          <p>If you have push access instead of a fork: create a new <strong>branch</strong> (a separate line of work so your change does not disturb the main version) in VS Code (click the branch name in the bottom-left corner), commit, click <strong>Publish Branch</strong>, then use the <strong>Compare &amp; pull request</strong> button GitHub shows you. The main branch is protected, so all changes go in through pull requests.</p>
         </section>
 
         <section id="bugs" class="docs__section">
@@ -210,19 +232,6 @@ git config --global user.email "you@example.com"</code></pre>
           </table>
         </section>
 
-        <section id="glossary" class="docs__section">
-          <h2><span class="docs__num">14</span>Glossary</h2>
-          <dl class="docs__glossary">
-            <dt>Repository (repo)</dt><dd>A project folder that Git tracks. Yours lives on your computer and on GitHub.</dd>
-            <dt>Fork</dt><dd>Your own copy of someone else's repo on GitHub.</dd>
-            <dt>Clone</dt><dd>Downloading a repo from GitHub to your computer.</dd>
-            <dt>Commit</dt><dd>A saved snapshot of your changes with a message.</dd>
-            <dt>Push</dt><dd>Sending your commits up to GitHub.</dd>
-            <dt>Pull or Sync</dt><dd>Bringing changes from GitHub down to your computer.</dd>
-            <dt>Pull request</dt><dd>Asking the original project to take in your changes.</dd>
-            <dt>Deploy</dt><dd>Publishing the site so it has a public web address. Vercel does this for you.</dd>
-          </dl>
-        </section>
 
         <p class="docs__footnote">These instructions are also in the repo as <a href="https://github.com/glntenorio/sampleproject/blob/main/SETUP.md">SETUP.md</a> and <a href="https://github.com/glntenorio/sampleproject/blob/main/TESTERS.md">TESTERS.md</a>.</p>
       </div>

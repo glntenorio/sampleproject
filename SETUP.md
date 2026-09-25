@@ -83,6 +83,8 @@ Then open https://github.com/glntenorio/sampleproject/fork and click **Create fo
 
 If Glen gave you push access instead, skip the fork and use `https://github.com/glntenorio/sampleproject` in the next step.
 
+**Not sure whether you have push access?** On your own fork you always do. On the main repo: open any file there and click the pencil icon. If it edits in place, you have access. If GitHub says "You need to fork this repository to propose changes", you do not, and it will make a fork for you instead. A **Settings** tab at the top of the repo page is another sign of write access. Push access always arrives as a GitHub invitation email you must accept. When in doubt, use a fork.
+
 ### 3b. Clone it in VS Code
 
 Your fork lives on GitHub's website. Downloading a copy to your computer is called **cloning**. VS Code does it for you.

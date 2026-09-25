@@ -50,6 +50,43 @@ The project is connected to Vercel. Every push to `main` deploys to production a
 
 Testers sync their forks and check the footer to confirm they have the latest version.
 
+## Backups and rollback
+
+Git is the backup, as long as work is pushed. Every commit is a permanent snapshot and every push puts a copy on GitHub. Each tester's fork is a further copy, and Vercel keeps every deployment.
+
+**Habits**
+
+- Commit small and push straight after. Unpushed work is the only work at risk.
+- Tag each release so it can be found by name:
+
+  ```
+  git tag -a v0.3.0 -m "Release 0.3.0"
+  git push origin v0.3.0
+  ```
+
+- Branch before a risky change. If it fails, switch back to `main` and delete the branch.
+- `main` is protected: no force pushes, no deletion, changes through pull requests.
+
+**Getting something back**
+
+| Situation | Fix |
+|---|---|
+| Broke a file, not committed yet | VS Code Source Control, hover the file, **Discard Changes** |
+| Need an older version of a file | Right-click the file in VS Code, **Open Timeline**, pick the commit. Or **History** on GitHub. |
+| Undo a commit that is already pushed | `git revert <commit>` then push. Makes a new commit that cancels the old one; history stays intact. |
+| Live site is broken, Git is fine | vercel.com, **Deployments**, pick the last good one, **Promote to Production** |
+
+**Offline copy**
+
+A mirror clone holds every branch and tag. Put it somewhere Time Machine or a cloud drive backs up, and refresh it now and then:
+
+```
+git clone --mirror https://github.com/glntenorio/sampleproject.git ~/Backups/sampleproject.git
+cd ~/Backups/sampleproject.git && git remote update
+```
+
+Not backed up, by design: anything in `.gitignore` (`.env.local`, `.vercel`, `.DS_Store`). Vercel project settings such as the domain live in Vercel, not in the repo.
+
 ## Inviting a tester
 
 ```

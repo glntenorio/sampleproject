@@ -129,6 +129,8 @@ Saving a file only changes it on your computer. Getting it onto GitHub takes two
 
 Refresh your fork on GitHub and you will see the change and your message.
 
+Pushing is also your backup. Every commit is a permanent snapshot, and once pushed it lives on GitHub as well as your computer. Unpushed work is the only work at risk.
+
 ## 7. Publish on Vercel
 
 You only do this once. After that, every push republishes automatically.
